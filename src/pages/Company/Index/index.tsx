@@ -1,0 +1,1 @@
+export { CompanyIndex } from "./CompanyIndex";

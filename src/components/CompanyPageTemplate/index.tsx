@@ -1,0 +1,1 @@
+export { CompanyPageTemplate } from "./CompanySectionTemplate";

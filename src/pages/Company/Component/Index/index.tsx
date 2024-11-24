@@ -1,0 +1,1 @@
+export { ComponentIndex } from "./ComponentIndex";
