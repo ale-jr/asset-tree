@@ -1,10 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -17,6 +20,22 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <h2>{t("hello")}</h2>
+      <button
+        onClick={() => {
+          i18n.changeLanguage("pt-BR");
+        }}
+      >
+        pt-BR
+      </button>
+
+      <button
+        onClick={() => {
+          i18n.changeLanguage("en-US");
+        }}
+      >
+        en-US
+      </button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -29,7 +48,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
